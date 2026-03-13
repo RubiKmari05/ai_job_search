@@ -16,10 +16,9 @@ export async function GET(request: Request) {
                 getAll() {
                     return cookieStore.getAll()
                 },
-                setAll(cookiesToSet) {
-                    cookiesToSet.forEach(({ name, value, options }) =>
-                        cookieStore.set(name, value, options)
-                    )
+                setAll() {
+                    // Next.js route handlers use read-only cookies
+                    // so we leave this empty
                 },
             },
         }
